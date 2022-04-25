@@ -1,11 +1,18 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Books
+from django.views import generic
+from .models import News 
+from .tasks import get_google_news
 
-def home_view(request, *args, **kwargs):
-   return HttpResponse("<h1>Hello World!</h1>")
 
 
-def book_detail_view(request, book_id, *args, **kwargs):
-   obj = Books.objects.get(id=book_id)
-   return HttpResponse(f"Kitap Ad1: {obj.name} Yazar1: {obj.author}")
+
+
+class HomePageView(generic.ListView):
+    get_google_news.delay()
+    template_name = 'api/home.html'
+    context_object_name = 'articles' 
+
+    def get_queryset(self):
+       print(News.objects.all())
+       return News.objects.all()
+
