@@ -1,0 +1,36 @@
+
+{% extends 'api/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <table>
+        <tbody>
+            {% for a in articles %}
+            <tr>
+                <td>
+                    <a href="{{ a.url }}">{{ a.title }}</a>
+                </td>
+                <td>
+                    <p>
+                        Source: {{ a.source }}
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        Published: {{ a.published }}
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        Score: {{ a.score }}
+                    </p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

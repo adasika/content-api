@@ -1,0 +1,8 @@
+[2022-04-23 20:40:05,180: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2022-04-23 20:40:05,188: INFO/MainProcess] mingle: searching for neighbors
+[2022-04-23 20:40:06,247: INFO/MainProcess] mingle: all alone
+[2022-04-23 20:40:06,287: WARNING/MainProcess] c:\users\archi\content-aggregator\content-aggregator-api\env\lib\site-packages\celery\fixups\django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2022-04-23 20:40:06,287: INFO/MainProcess] celery@LAPTOP-7F6QDSE3 ready.
