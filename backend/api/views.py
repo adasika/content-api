@@ -5,8 +5,6 @@ from .tasks import get_google_news
 
 
 
-
-
 class HomePageView(generic.ListView):
     get_google_news.delay()
     template_name = 'api/home.html'
